@@ -1,12 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clear text editor</title>
+    <style>
+        :root {
+            --fg: #fdf7faff;
+            --bg: #272727ff;
+            --bg-light: #3f3f3f;
+            --editor-border: #75f4f4ff;
+            --sizzling-red: #f2545bff;
+        }
+        body {
+            color: var(--fg);
+            background-color: var(--bg);
+        }
+        body * {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        #editor {
+            position: fixed;
+            top: 10vh;
+            bottom: 0;
+            left: 10vw;
+            right: 0;
+            outline: none;
+            background-color: var(--editor-bg);
+            border: 1px solid var(--editor-border);
+            display: grid;
+            grid-template-columns: 1rem 99fr; /* remember to adjust hard core in script.js lineInput() */
+        }
+        .editor-line:focus {
+            border-top: 1px solid var(--bg-light);
+            border-bottom: 1px solid var(--bg-light);
+            outline: none;
+        }
 
+    </style>
 </head>
 <body>
-    <!-- Toolbar -->
-    <div id="toolbar"></div>
-    <textarea></textarea>
-</body>
+    <div id="tool-bar">
+        <button>Drop anchor</button>
+    </div>
+    <div id="nav-bar">
+        <!-- Headers -->
+    </div>
+    <div id="editor">
+        <div id="line-numbers"></div>
+        <div id="text-area">
+        </div>
+    </div>
+    <div id="side-bar">
 
+    </div>
+</body>
+<script src="./script.js"></script>
 </html>
